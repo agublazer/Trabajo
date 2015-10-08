@@ -2,13 +2,11 @@
 #include<string>
 using namespace std;
 
-int main()
+void encontrar_letra(string x)
 {
-    string x,b;
-    int a;
+    int a,b;
     bool n = false;
-    getline(cin,x);
-    cout<<"¿Cuántas letras tiene su nombre? ";cin>>a;
+    cout<<"Â¿CuÃ¡ntas letras tiene el nombre? ";cin>>a;
     cout<<"Letra a encontrar: ";cin>>b;
     cout<<"Posiciones: "<<endl;
     for(int i=0;i<a;i++)
@@ -31,7 +29,15 @@ int main()
     }
     if(n==false)
     {
-        cout<<"No se encontró la letra"<<endl;
+        cout<<"No se encontrÃ³ la letra"<<endl;
     }
+}
+
+int main()
+{
+    string x;
+    getline(cin,x);
+    encontrar_letra(x);
+
 }
 
