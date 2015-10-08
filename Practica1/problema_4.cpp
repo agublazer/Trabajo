@@ -1,20 +1,25 @@
 #include<iostream>
 using namespace std;
 
-int main()
+int factorial(int p)
 {
-    int n;
     int x=1;
-    cout<<"Factorial: "; cin>>n;
-    if (n==0 or n==1)
+    
+    if (p==0 or p==1)
     {
-        cout<<"1"<<endl;
+        return 1;
     }
     else
     {
-        for(int i=1;i<=n;i++)
+        for(int i=1;i<=p;i++)
             x = x*i;
-        cout<<x<<endl;
     }
+    return x;
+}
 
+int main()
+{
+    int n;
+    cout<<"Factorial: "; cin>>n;
+    cout<<factorial(n);
 }
