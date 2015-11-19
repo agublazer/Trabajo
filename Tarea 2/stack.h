@@ -10,10 +10,10 @@ public:
     Stack(int n);
     Stack();
 
-    //añadir valores:
+    //aÃ±adir valores:
     int push(T n);
 
-    //eliminar último valor:
+    //eliminar Ãºltimo valor:
     int pop();
 
     //conseguir valores:
@@ -39,4 +39,28 @@ public:
         }
         return s_3;
     }
+    
+    Stack<T> operator -(Stack<T> s_2)
+    {
+        Stack<T> s_3;
+        if(max_size>=s_2.max_size)
+		  {
+		  		s_3.max_size=max_size;
+		  }
+
+		  if(max_size<s_2.max_size)
+		  {
+		  		s_3.max_size=s_2.max_size;
+		  }
+			
+
+        for(int i=0;i<s_3.max_size;i++)
+        {
+		   	if (stack_items[i]==s_2.stack_items[i])
+            	s_3.stack_items[i]=stack_items[i];
+
+				if (stack_items[i]!=s_2.stack_items[i])
+					s_3.stack_items=0;
+        }
+	 	  return s_3;
 };
