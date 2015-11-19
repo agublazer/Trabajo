@@ -26,6 +26,29 @@ public:
             j++;
         }
         return q_3;
-
     }
+	Queue<T> operator -(Queue<T> q_2)
+    {
+        Queue<T> q_3;
+        if(size>=q_2.size)
+		{
+		    q_3.size=size;
+		}
+
+		if(size<q_2.size)
+		{
+		    q_3.size=q_2.size;
+		}
+			
+
+        for(int i=0;i<q_3.size;i++)
+        {
+		    if (items[i]==q_2.items[i])
+                q_3.items[i]=items[i];
+
+			if (items[i]!=q_2.items[i])
+				q_3.items=0;
+        }
+		  return q_3;
+	}
 };
