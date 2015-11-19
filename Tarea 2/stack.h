@@ -44,23 +44,23 @@ public:
     {
         Stack<T> s_3;
         if(max_size>=s_2.max_size)
-		  {
-		  		s_3.max_size=max_size;
-		  }
+	{
+		s_3.max_size=max_size;
+	}
 
-		  if(max_size<s_2.max_size)
-		  {
-		  		s_3.max_size=s_2.max_size;
-		  }
+	if(max_size<s_2.max_size)
+	{
+  		s_3.max_size=s_2.max_size;
+	}
 			
 
         for(int i=0;i<s_3.max_size;i++)
         {
-		   	if (stack_items[i]==s_2.stack_items[i])
-            	s_3.stack_items[i]=stack_items[i];
-
-				if (stack_items[i]!=s_2.stack_items[i])
-					s_3.stack_items=0;
+		if (stack_items[i]==s_2.stack_items[i])
+            		s_3.stack_items[i]=stack_items[i];
+            		
+		if (stack_items[i]!=s_2.stack_items[i])
+			s_3.stack_items=0;
         }
-	 	  return s_3;
+	return s_3;
 };
