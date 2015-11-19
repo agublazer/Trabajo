@@ -57,10 +57,7 @@ public:
         for(int i=0;i<s_3.max_size;i++)
         {
 		if (stack_items[i]==s_2.stack_items[i])
-            		s_3.stack_items[i]=stack_items[i];
-            		
-		if (stack_items[i]!=s_2.stack_items[i])
-			s_3.stack_items=0;
+            		s_3.stack_items[i]=0;
         }
 	return s_3;
 };
