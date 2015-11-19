@@ -11,11 +11,19 @@ Stack<T>::Stack(int n)
 }
 
 template<typename T>
+Stack<T>::Stack()
+{
+    max_size = 0;
+    n_items = 0;
+    stack_items = new T[max_size];
+}
+
+template<typename T>
 int Stack<T>::push(T n)
 {
     if (n_items+1 > max_size)
     {
-        cout<<"El stack está lleno"<<endl;
+        cout<<"El stack estÃ¡ lleno"<<endl;
         return 0;
     }
     if (n_items<max_size+1)
@@ -31,7 +39,7 @@ int Stack<T>::pop()
 {
     if (n_items==0)
     {
-        cout<<"El stack está vacío"<<endl;
+        cout<<"El stack estÃ¡ vacÃ­o"<<endl;
         return 0;
     }
     if (n_items > 0)
