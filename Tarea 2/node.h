@@ -24,5 +24,19 @@ public:
     //recuperar valores:
     T get_value() {return value;}
     node<T>* get_next(){return next_node;}
+    //suma:
+    node<T> operator+(node<T> n_2)
+    {
+        node<T> n_3;
+        n_3.value = value + n_2.get_value();
+        return n_3;
+    }
+    //resta:
+    node<T> operator-(node<T> n_2)
+    {
+        node<T> n_3;
+        n_3.value = value - n_2.get_value();
+        return n_3;
+    }
 };
 

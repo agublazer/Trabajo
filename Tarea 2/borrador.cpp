@@ -31,6 +31,20 @@ int main()
     nodo3->delete_next();
     cout<<"El nodo 3 apunta a: "<<nodo3->get_next()<<endl;
 
+    node<int> *nodo4;
+    node<int> *nodo5;
+    node<int> *nodo6;
+    node<int> *nodo7;
+
+    nodo4 = new node<int>;
+    nodo5 = new node<int>(2);
+    nodo6 = new node<int>(3);
+    nodo7 = new node<int>;
+    cout<<nodo5->get_value() + nodo6->get_value()<<endl;
+    *nodo4 = *nodo5 + *nodo6;
+    cout<<nodo4->get_value()<<endl;
+    cout<<nodo5->get_value() - nodo6->get_value()<<endl;
+    *nodo4 = *nodo5 - *nodo6;
     delete nodo1,nodo2,nodo3;
 
     return 0;

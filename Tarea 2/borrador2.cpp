@@ -46,5 +46,17 @@ int main()
     cout<<stack_1->get_top()<<endl;
     cout<<stack_1->get_items()<<endl;
 
+    Stack<int> *s_a;
+    Stack<int> *s_b;
+    Stack<int> *s_c;
+
+    s_a = new Stack<int>;
+    s_b = new Stack<int>(2);
+    s_c = new Stack<int>(2);
+
+    *s_a = *s_b + *s_c;
+
+
+
     return 0;
 }
