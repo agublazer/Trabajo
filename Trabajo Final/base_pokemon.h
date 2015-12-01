@@ -6,6 +6,7 @@ class Pokemon
 {
 private:
 	T _hp;
+	T _max_hp;
 	T _exp;
 	T _exp_limit;
 	T _exp_after_die;
@@ -15,8 +16,6 @@ private:
 	string _type;
 	T _Atk;
 	T _Def;
-	T _spAtk;
-	T _spDef;
 
 public:
 	//constructor:
@@ -38,18 +37,19 @@ public:
 	void set_type(string n);
 	void set_pokemon_class(string n);
 	void set_hp(T hp);
+	void set_max_hp(T hp);
 	void set_exp(T exp);
 	void set_Atk(T atk);
 	void set_Def(T def);
-	void set_spAtk(T spAtk);
-	void set_spDef(T spDef);
 
 	//funciones básicas:
 
 	void give_name(string name);
 	void level_up();
+	void damage(T n);
+	void heal(T n);
 
 	//calcular daño
 	template<typename S>
-	friend float atk(Pokemon<S> a,Pokemon<S> b);
+	friend float atk(Pokemon<S> a,Pokemon<S> &b,string atk_type, int base_power);
 };

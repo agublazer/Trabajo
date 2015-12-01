@@ -7,36 +7,9 @@ Pokemon<T>::Pokemon(int level)
 	this->_exp = 0;
 	this->_name = "Pokemon salvaje";
 
-	switch(_level)
-	{
-	case 1:
-	_exp_limit = 100;
-	_exp_after_die = 25;
-	break;
-
-	case 2:
-	_exp_limit = 200;
-	_exp_after_die = 50;
-	break;
-
-	case 3:	
-	_exp_limit= 300;
-	_exp_after_die = 75;
-	break;
-
-	case 4:
-	_exp_limit = 400;
-	_exp_after_die= 100;
-	break;
-
-	default:
-	_hp=0;
-	_exp_limit=0;
-	_exp_after_die=0;
-	}
 }
 
-template<typename T>	
+template<typename T>
 void Pokemon<T>::level_up()
 {
 	this->_exp = 0;
@@ -47,28 +20,6 @@ void Pokemon<T>::level_up()
 	}
 	else
 		cout<<_name<<" ha llegado al nivel máximo"<<endl;
-	switch(_level)
-	{
-	case 1:
-	_exp_limit = 100;
-	_exp_after_die = 25;
-	break;
-	case 2:
-	_exp_limit = 200;
-	_exp_after_die = 50;
-	break;
-	case 3:
-	_exp_limit= 300;
-	_exp_after_die = 75;
-	break;
-	case 4:
-	_exp_limit = 400;
-	_exp_after_die= 100;
-	break;
-	default:
-	_exp_limit=400;
-	_exp_after_die=100;
-	}
 }
 
 template<typename T>
@@ -96,6 +47,12 @@ void Pokemon<T>::set_hp(T hp)
 }
 
 template<typename T>
+void Pokemon<T>::set_max_hp(T hp)
+{
+	this->_max_hp=hp;
+}
+
+template<typename T>
 void Pokemon<T>::set_exp(T exp)
 {
 	this->_exp=exp;
@@ -113,17 +70,22 @@ void Pokemon<T>::set_Def(T def)
 	this->_Def=def;
 }
 
-
 template<typename T>
-void Pokemon<T>::set_spAtk(T spAtk)
+void Pokemon<T>::damage(T n)
 {
-	this->_spAtk=spAtk;
+    if (this->_hp - n < 0)
+        this->_hp=0;
+    else
+        this->_hp -= n;
 }
 
 template<typename T>
-void Pokemon<T>::set_spDef(T spDef)
+void Pokemon<T>::heal(T n)
 {
-	this->_spDef=spDef;
+    if (this->_hp + n > this->_max_hp)
+        this->_hp=this->_max_hp;
+    else
+        this->_hp += n;
 }
 
 
