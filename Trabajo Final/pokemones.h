@@ -5,13 +5,17 @@ class Pikachu: public Pokemon<T>{
 public:
     Pikachu(int level): Pokemon<T>(level)
     {
+        this->_hp = 35 + (this->_level-1)*1.92;
+        this->set_Atk(55 + (this->_level-1)*1.11);
+        this->set_Def(35 + (this->_level-1)*0.96);
+
         this->set_type("Electrico");
         this->set_pokemon_class("Pikachu");
-        this->set_hp(35);
-        this->set_max_hp(35);
-        this->set_Atk(55);
-        this->set_Def(40);
+        this->set_max_hp(this->_hp);
+        this->_n_mov= 2;
     };
+    //subir de nivel:
+    void level_up();
 
     //poderes:
     template<typename S>
@@ -26,13 +30,19 @@ class Bulbasaur: public Pokemon<T>{
 public:
     Bulbasaur(int level): Pokemon<T>(level)
     {
+
+        this->_hp = 45 + (this->_level-1)*2.02;
+        this->set_Atk(49 + (this->_level-1)*1.05);
+        this->set_Def(49 + (this->_level-1)*1.05);
+
         this->set_type("Planta");
         this->set_pokemon_class("Bulbasaur");
-        this->set_hp(45);
-        this->set_max_hp(45);
-        this->set_Atk(49);
-        this->set_Def(49);
+        this->set_max_hp(this->_hp);
+        this->_n_mov = 3;
     };
+    //subir de nivel:
+    void level_up();
+
     //poderes:
     template<typename S>
     friend float tackle(Bulbasaur<S> a, Pokemon<S> &b);
@@ -50,13 +60,18 @@ class Charmander: public Pokemon<T>{
 public:
     Charmander(int level): Pokemon<T>(level)
     {
+        this->_hp = 39 + (this->_level-1)*1.96;
+        this->set_Atk(52 + (this->_level-1)*1.08);
+        this->set_Def(43 + (this->_level-1)*0.99);
+
         this->set_type("Fuego");
         this->set_pokemon_class("Charmander");
-        this->set_hp(39);
-        this->set_max_hp(39);
-        this->set_Atk(52);
-        this->set_Def(43);
+        this->set_max_hp(this->_hp);
+        this->_n_mov = 2;
     };
+    //subir de nivel:
+    void level_up();
+
     //poderes:
     template<typename S>
     friend float scratch(Charmander<S> a, Pokemon<S> &b);
@@ -69,13 +84,19 @@ class Squirtle: public Pokemon<T>{
 public:
     Squirtle(int level): Pokemon<T>(level)
     {
+        this->_hp = 44 + (this->_level-1)*2.01;
+        this->set_Atk(48 + (this->_level-1)*1.04);
+        this->set_Def(65 + (this->_level-1)*1.21);
+
         this->set_type("Agua");
         this->set_pokemon_class("Squirtle");
-        this->set_hp(44);
-        this->set_max_hp(44);
-        this->set_Atk(48);
-        this->set_Def(65);
+        this->set_max_hp(this->_hp);
+        this->_n_mov= 2;
+
     };
+    //subir de nivel:
+    void level_up();
+
     //poderes:
     template<typename S>
     friend float tackle(Squirtle<S> a, Pokemon<S> &b);
@@ -89,14 +110,20 @@ class Rattata: public Pokemon<T>{
 public:
     Rattata(int level): Pokemon<T>(level)
     {
+        this->_hp = 55 + (this->_level-1)*1.87;
+        this->set_Atk(55 + (this->_level-1)*1.12);
+        this->set_Def(50 + (this->_level-1)*0.91);
+
         this->set_type("Normal");
         this->set_pokemon_class("Rattata");
-        this->set_hp(55);
-        this->set_max_hp(55);
-        this->set_Atk(55);
-        this->set_Def(50);
-    };
+        this->set_max_hp(this->_hp);
+        this->_n_mov = 1;
 
+    };
+    //subir de nivel:
+    void level_up();
+
+    //poderes:
     template<typename P>
     friend float tackle(Rattata<P> a, Pokemon<P> &b);
 

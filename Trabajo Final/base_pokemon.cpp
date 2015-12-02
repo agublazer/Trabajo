@@ -3,23 +3,11 @@
 template<typename T>
 Pokemon<T>::Pokemon(int level)
 {
+    this->_exp_limit=5*_level;
 	this->_level = level;
 	this->_exp = 0;
 	this->_name = "Pokemon salvaje";
 
-}
-
-template<typename T>
-void Pokemon<T>::level_up()
-{
-	this->_exp = 0;
-	if(_level < 4)
-	{
-		this->_level++;
-		cout<<_name<<" ha evolucionado al nivel"<<_level<<endl;
-	}
-	else
-		cout<<_name<<" ha llegado al nivel máximo"<<endl;
 }
 
 template<typename T>
@@ -40,11 +28,6 @@ void Pokemon<T>::set_pokemon_class(string n)
 	this->_pokemon_class=n;
 }
 
-template<typename T>
-void Pokemon<T>::set_hp(T hp)
-{
-	this->_hp=hp;
-}
 
 template<typename T>
 void Pokemon<T>::set_max_hp(T hp)
@@ -52,11 +35,6 @@ void Pokemon<T>::set_max_hp(T hp)
 	this->_max_hp=hp;
 }
 
-template<typename T>
-void Pokemon<T>::set_exp(T exp)
-{
-	this->_exp=exp;
-}
 
 template<typename T>
 void Pokemon<T>::set_Atk(T atk)
@@ -86,6 +64,11 @@ void Pokemon<T>::heal(T n)
         this->_hp=this->_max_hp;
     else
         this->_hp += n;
+}
+template<typename T>
+void Pokemon<T>::gain_exp(T n)
+{
+    _exp += n;
 }
 
 

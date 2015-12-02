@@ -1,0 +1,20 @@
+pikachu:
+hp lvl 100: 227 (1,92 cada nivel)
+atk lvl 100: 166 (1,11 cada nivel)
+def lvl 100: 136 (0,96 cada nivel)
+bulbasaur:
+hp lvl 100: 247 (2,02 cada nivel)
+atk lvl 100: 154 (1,05 cada nivel)
+def lvl 100: 154 (1,05 cada nivel)
+charmander:
+hp lvl 100: 235 (1,96 cada nivel)
+atk lvl 100: 160 (1,08 cada nivel)
+def lvl 100: 142 (0,99 cada nivel)
+squirtle:
+hp lvl 100: 245 (2,01 cada nivel)
+atk lvl 100: 152 (1,04 cada nivel)
+def lvl 100: 186 (1,21 cada nivel)
+rattata:
+hp lvl 100: 217 (1,87 cada nivel)
+atk lvl 100: 168 (1,12 cada nivel)
+def lvl 100: 126 (0,91 cada nivel)
