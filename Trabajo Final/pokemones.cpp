@@ -15,7 +15,20 @@ void Pikachu<S>::level_up()
 }
 
 template<typename S>
-float thunder_shock(Pokemon<S> a, Pokemon<S> &b)
+void Pikachu<S>::choose_attack(Pikachu<S>a ,Pokemon<S> &b)
+{
+    int option;
+    cin>>option;
+    switch(option){
+    case 1:
+        thunder_shock(a,b);
+        break;
+    default:
+        break;
+    }
+}
+template<typename S>
+float thunder_shock(Pikachu<S> a, Pokemon<S> &b)
 {
     int base_power = 40;
     string atk_type = "Electrico";
@@ -24,7 +37,7 @@ float thunder_shock(Pokemon<S> a, Pokemon<S> &b)
 
 }
 template<typename S>
-float quick_attack(Pokemon<S> a, Pokemon<S> &b)
+float quick_attack(Pikachu<S> a, Pokemon<S> &b)
 {
     int base_power = 40;
     string atk_type = "Electrico";

@@ -17,8 +17,6 @@ protected:
     int _level;
     T _hp;
     T _exp;
-    int _n_mov;//numero de movimientos
-
 
 public:
 	//constructor:
@@ -48,6 +46,7 @@ public:
 
 	void give_name(string name);
 	void level_up() {return 0;}
+	void choose_attack(Pokemon<T> a, Pokemon<T> &b);
     void gain_exp(T n);
 	void damage(T n);
 	void heal(T n);
@@ -55,9 +54,4 @@ public:
 	//calcular daño
 	template<typename S>
 	friend float atk(Pokemon<S> a,Pokemon<S> &b,string atk_type, int base_power);
-	//poderes:
-	template<typename P>
-	friend float thunder_shock(Pokemon<P> a, Pokemon<P> &b);
-	template<typename A>
-	friend float quick_attack(Pokemon<A> a, Pokemon<A> &b);
 };

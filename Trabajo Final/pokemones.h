@@ -12,10 +12,11 @@ public:
         this->set_type("Electrico");
         this->set_pokemon_class("Pikachu");
         this->set_max_hp(this->_hp);
-        this->_n_mov= 2;
     };
     //subir de nivel:
     void level_up();
+    void choose_attack(Pikachu<T> a, Pokemon<T> &b);
+
 
     //poderes:
     template<typename S>
@@ -38,7 +39,6 @@ public:
         this->set_type("Planta");
         this->set_pokemon_class("Bulbasaur");
         this->set_max_hp(this->_hp);
-        this->_n_mov = 3;
     };
     //subir de nivel:
     void level_up();
@@ -67,7 +67,7 @@ public:
         this->set_type("Fuego");
         this->set_pokemon_class("Charmander");
         this->set_max_hp(this->_hp);
-        this->_n_mov = 2;
+
     };
     //subir de nivel:
     void level_up();
@@ -91,7 +91,6 @@ public:
         this->set_type("Agua");
         this->set_pokemon_class("Squirtle");
         this->set_max_hp(this->_hp);
-        this->_n_mov= 2;
 
     };
     //subir de nivel:
@@ -117,7 +116,6 @@ public:
         this->set_type("Normal");
         this->set_pokemon_class("Rattata");
         this->set_max_hp(this->_hp);
-        this->_n_mov = 1;
 
     };
     //subir de nivel:
