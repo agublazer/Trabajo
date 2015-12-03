@@ -46,10 +46,12 @@ public:
 
 	void give_name(string name);
 	void level_up() {return 0;}
-	void choose_attack(Pokemon<T> a, Pokemon<T> &b);
     void gain_exp(T n);
 	void damage(T n);
 	void heal(T n);
+
+	virtual void choose_attack(Pokemon<T> a, Pokemon<T> &b){cout<<0;}
+	virtual void ai_choose_attack(Pokemon<T> a, Pokemon<T> &b){cout<<0;}
 
 	//calcular daño
 	template<typename S>

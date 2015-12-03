@@ -13,16 +13,17 @@ public:
         this->set_pokemon_class("Pikachu");
         this->set_max_hp(this->_hp);
     };
-    //subir de nivel:
-    void level_up();
-    void choose_attack(Pikachu<T> a, Pokemon<T> &b);
 
+
+    void level_up();
+    void ai_choose_attack(Pokemon<T> a, Pokemon<T> &b);
+    void choose_attack(Pokemon<T>a ,Pokemon<T> &b);
 
     //poderes:
     template<typename S>
-    friend float thunder_shock(Pikachu<S> a, Pokemon<S> &b);
+    friend float thunder_shock(Pokemon<S> a, Pokemon<S> &b);
     template<typename P>
-    friend float quick_attack(Pikachu<P> a, Pokemon<P> &b);
+    friend float quick_attack(Pokemon<P> a, Pokemon<P> &b);
 
 };
 
@@ -40,16 +41,18 @@ public:
         this->set_pokemon_class("Bulbasaur");
         this->set_max_hp(this->_hp);
     };
-    //subir de nivel:
+
+    void ai_choose_attack(Pokemon<T> a, Pokemon<T> &b);
+    void choose_attack(Pokemon<T> a, Pokemon<T> &b);
     void level_up();
 
     //poderes:
     template<typename S>
-    friend float tackle(Bulbasaur<S> a, Pokemon<S> &b);
+    friend float tackle(Pokemon<S> a, Pokemon<S> &b);
     template<typename P>
-    friend float razor_leaf(Bulbasaur<P> a, Pokemon<P> &b);
+    friend float razor_leaf(Pokemon<P> a, Pokemon<P> &b);
     template<typename U>
-    friend float rest(Bulbasaur<U> a, Pokemon<U> &b);
+    friend float rest(Pokemon<U> &a);
 
 
 
@@ -69,14 +72,16 @@ public:
         this->set_max_hp(this->_hp);
 
     };
-    //subir de nivel:
+
+    void ai_choose_attack(Pokemon<T> a, Pokemon<T> &b);
+    void choose_attack(Pokemon<T> a, Pokemon<T> &b);
     void level_up();
 
     //poderes:
     template<typename S>
-    friend float scratch(Charmander<S> a, Pokemon<S> &b);
+    friend float scratch(Pokemon<S> a, Pokemon<S> &b);
     template<typename P>
-    friend float ember(Charmander<P> a, Pokemon<P> &b);
+    friend float ember(Pokemon<P> a, Pokemon<P> &b);
 };
 
 template<typename T>
@@ -93,14 +98,16 @@ public:
         this->set_max_hp(this->_hp);
 
     };
-    //subir de nivel:
+
+    void ai_choose_attack(Pokemon<T> a, Pokemon<T> &b);
+    void choose_attack(Pokemon<T> a, Pokemon<T> &b);
     void level_up();
 
     //poderes:
     template<typename S>
-    friend float tackle(Squirtle<S> a, Pokemon<S> &b);
+    friend float tackle(Pokemon<S> a, Pokemon<S> &b);
     template<typename P>
-    friend float water_gun(Squirtle<P> a, Pokemon<P> &b);
+    friend float water_gun(Pokemon<P> a, Pokemon<P> &b);
 
 };
 
@@ -118,11 +125,13 @@ public:
         this->set_max_hp(this->_hp);
 
     };
-    //subir de nivel:
+
+    void choose_attack(Pokemon<T> a, Pokemon<T> &b);
+    void ai_choose_attack(Pokemon<T> a, Pokemon<T> &b);
     void level_up();
 
     //poderes:
     template<typename P>
-    friend float tackle(Rattata<P> a, Pokemon<P> &b);
+    friend float tackle(Pokemon<P> a, Pokemon<P> &b);
 
 };
